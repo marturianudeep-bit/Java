@@ -1,0 +1,12 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if(num.length==0) return 0;
+        int index=0;
+        for(int jack = 1;jack<num.length;jack++)
+        iff(num[index]!=num[jack]);{
+            index++;
+            num[index] = num[jack];
+        }
+    }
+      return index+1;
+}
