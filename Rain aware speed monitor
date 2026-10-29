@@ -1,0 +1,27 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+
+        int S = scan.nextInt();
+        int L = scan.nextInt();
+        int R = scan.nextInt();
+
+        int limit = L;
+
+        if(R == 1){
+            limit = L - 10;
+        }
+        int excess = S - limit;
+
+        if(excess <= 0){
+            System.out.println("SAFE");
+        }else if(excess <= 10){
+            System.out.println("WARNING");
+        }else if(excess <= 30){
+            System.out.println("FINE 1000");
+        }else{
+            System.out.println("FINE 3000");
+        }
+    }
+}
