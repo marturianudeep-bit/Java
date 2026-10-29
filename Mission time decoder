@@ -1,0 +1,19 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+
+        long T = scan.nextLong();
+
+        long days = T / 86400;
+        T = T % 86400;
+
+        long hours = T / 3600;
+        T = T % 3600;
+
+        long minutes = T / 60;
+        long seconds = T % 60;
+
+        System.out.println(days + " " + hours + " " + minutes + " " + seconds);
+    }
+}
