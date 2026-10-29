@@ -1,0 +1,10 @@
+class Solution {
+    public int maxSubArray(int[] arr) {
+        int mSum = arr[0], cSum = arr[0];
+        for(int index=1;index<arr.length;index++){
+            cSum=Math.max(arr[index],arr[index]+cSum);
+            mSum = Math.max(cSum, mSum);
+        }
+        return mSum;
+    }
+}
