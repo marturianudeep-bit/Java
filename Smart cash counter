@@ -1,0 +1,19 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        long amount = sc.nextLong();
+
+        int[] notes = {500, 200, 100, 50, 20, 10, 5, 1};
+        long count = 0;
+
+        for (int note : notes) {
+            count += amount / note;
+            amount %= note;
+        }
+
+        System.out.println(count);
+    }
+}
