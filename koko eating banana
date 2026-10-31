@@ -1,0 +1,16 @@
+class Solution {
+    public static boolean eatble(int[] arr,int hr, int sp){
+        long cur =0;
+        for(int piller:arr)cur+=(piller+sp-1)/sp;
+        return cur<=hr;
+    }
+    public int minEatingSpeed(int[] arr, int hours) {
+        int start=1, end=Arrays.stream(arr).max().orElse(0),mid=0;
+        while(start<=end){
+            mid=start+(end-start)/2;
+            if(eatble(arr, hours, mid)) end = mid-1;
+            else start=mid+1;
+        }
+        return start;
+    }
+}
