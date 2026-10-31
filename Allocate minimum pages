@@ -1,0 +1,40 @@
+class Solution {
+    public int findPages(int[] arr, int k) {
+        int n = arr.length;
+
+        if (k > n) return -1;
+
+        long low = 0, high = 0;
+
+        for (int x : arr) {
+            low = Math.max(low, x);
+            high += x;
+        }
+
+        long ans = high;
+
+        while (low <= high) {
+            long mid = low + (high - low) / 2;
+            int students = 1;
+            long sum = 0;
+
+            for (int x : arr) {
+                if (sum + x > mid) {
+                    students++;
+                    sum = x;
+                } else {
+                    sum += x;
+                }
+            }
+
+            if (students <= k) {
+                ans = mid;
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+
+        return (int) ans;
+    }
+}
